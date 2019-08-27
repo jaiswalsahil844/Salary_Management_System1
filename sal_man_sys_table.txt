@@ -1,0 +1,206 @@
+create database sal_man_sys;
+
+use sal_man_sys;
+Database changed
+
+create table employee
+(
+E_Id int, E_F_Name varchar(15), E_L_Name varchar(15), E_DOB datetime, E_Gender varchar(6), E_Add varchar(15), E_City varchar(15), E_Phone varchar(10), E_Designation varchar(15), E_Department varchar(15), E_HOD varchar(15), E_B_Salary float, E_DOJ date, Comments varchar(50), E_Grade char, E_Ac_No varchar(25), E_Type varchar(10)
+);
+
+describe employee;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| E_Id          | int(11)     | YES  |     | NULL    |       |
+| E_F_Name      | varchar(15) | YES  |     | NULL    |       |
+| E_L_Name      | varchar(15) | YES  |     | NULL    |       |
+| E_DOB         | date        | YES  |     | NULL    |       |
+| E_Gender      | varchar(6)  | YES  |     | NULL    |       |
+| E_Add         | varchar(15) | YES  |     | NULL    |       |
+| E_City        | varchar(15) | YES  |     | NULL    |       |
+| E_Phone       | varchar(10) | YES  |     | NULL    |       |
+| E_Designation | varchar(15) | YES  |     | NULL    |       |
+| E_Department  | varchar(15) | YES  |     | NULL    |       |
+| E_HOD         | varchar(15) | YES  |     | NULL    |       |
+| E_B_Salary    | float       | YES  |     | NULL    |       |
+| E_DOJ         | datetime    | YES  |     | NULL    |       |
+| Comments      | varchar(50) | YES  |     | NULL    |       |
+| E_Grade       | char(1)     | YES  |     | NULL    |       |
+| E_Ac_No       | varchar(25) | YES  |     | NULL    |       |
+| E_Type        | varchar(10) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+alter table employee
+add Primary key (E_Id);
+
+describe employee;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| E_Id          | int(11)     | NO   | PRI | NULL    |       |
+| E_F_Name      | varchar(15) | YES  |     | NULL    |       |
+| E_L_Name      | varchar(15) | YES  |     | NULL    |       |
+| E_DOB         | date        | YES  |     | NULL    |       |
+| E_Gender      | varchar(6)  | YES  |     | NULL    |       |
+| E_Add         | varchar(15) | YES  |     | NULL    |       |
+| E_City        | varchar(15) | YES  |     | NULL    |       |
+| E_Phone       | varchar(10) | YES  |     | NULL    |       |
+| E_Designation | varchar(15) | YES  |     | NULL    |       |
+| E_Department  | varchar(15) | YES  |     | NULL    |       |
+| E_HOD         | varchar(15) | YES  |     | NULL    |       |
+| E_B_Salary    | float       | YES  |     | NULL    |       |
+| E_DOJ         | date        | YES  |     | NULL    |       |
+| Comments      | varchar(50) | YES  |     | NULL    |       |
+| E_Grade       | char(1)     | YES  |     | NULL    |       |
+| E_Ac_No       | varchar(25) | YES  |     | NULL    |       |
+| E_Type        | varchar(10) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+create table Salary_Master
+(
+Sr_no int, E_Grade char, Bs float, Ta float, Da float, Hra float, Commision float, Ded float, Income_Tax float, Effective_Date_Time datetime, Pension float
+);
+
+describe salary_master;
++---------------------+----------+------+-----+---------+-------+
+| Field               | Type     | Null | Key | Default | Extra |
++---------------------+----------+------+-----+---------+-------+
+| Sr_no               | int(11)  | YES  |     | NULL    |       |
+| E_Grade             | char(1)  | YES  |     | NULL    |       |
+| Bs                  | float    | YES  |     | NULL    |       |
+| Ta                  | float    | YES  |     | NULL    |       |
+| Da                  | float    | YES  |     | NULL    |       |
+| Hra                 | float    | YES  |     | NULL    |       |
+| Commision           | float    | YES  |     | NULL    |       |
+| Ded                 | float    | YES  |     | NULL    |       |
+| Income_Tax          | float    | YES  |     | NULL    |       |
+| Effective_Date_Time | datetime | YES  |     | NULL    |       |
+| Pension             | float    | YES  |     | NULL    |       |
++---------------------+----------+------+-----+---------+-------+
+
+alter table salary_master
+add Primary Key (Sr_No);
+
+describe salary_master;
++---------------------+----------+------+-----+---------+-------+
+| Field               | Type     | Null | Key | Default | Extra |
++---------------------+----------+------+-----+---------+-------+
+| Sr_no               | int(11)  | NO   | PRI | NULL    |       |
+| E_Grade             | char(1)  | YES  |     | NULL    |       |
+| Bs                  | float    | YES  |     | NULL    |       |
+| Ta                  | float    | YES  |     | NULL    |       |
+| Da                  | float    | YES  |     | NULL    |       |
+| Hra                 | float    | YES  |     | NULL    |       |
+| Commision           | float    | YES  |     | NULL    |       |
+| Ded                 | float    | YES  |     | NULL    |       |
+| Income_Tax          | float    | YES  |     | NULL    |       |
+| Effective_Date_Time | datetime | YES  |     | NULL    |       |
+| Pension             | float    | YES  |     | NULL    |       |
++---------------------+----------+------+-----+---------+-------+
+
+create table Salary_Paid
+(
+E_Id int, Paid_Date_Time datetime, Amount_Paid float, Slip_no int
+);
+
+describe Salary_Paid;
++----------------+----------+------+-----+---------+-------+
+| Field          | Type     | Null | Key | Default | Extra |
++----------------+----------+------+-----+---------+-------+
+| E_Id           | int(11)  | YES  |     | NULL    |       |
+| Paid_Date_Time | datetime | YES  |     | NULL    |       |
+| Amount_Paid    | float    | YES  |     | NULL    |       |
+| Slip_no        | int(11)  | YES  |     | NULL    |       |
++----------------+----------+------+-----+---------+-------+
+
+create table Fund_Master
+(
+E_Grade int, Fund_Name varchar(15), Fund_Amount float
+);
+
+describe Fund_Master;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| E_Grade     | int(11)     | YES  |     | NULL    |       |
+| Fund_Name   | varchar(15) | YES  |     | NULL    |       |
+| Fund_Amount | float       | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+create table Fund_Paid
+(
+E_Id int, Amount_Paid float, P_Date_Time datetime, Fund_Name varchar(15)
+);
+
+
+describe Fund_Paid;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| E_Id        | int(11)     | YES  |     | NULL    |       |
+| Amount_Paid | float       | YES  |     | NULL    |       |
+| P_Date_Time | datetime    | YES  |     | NULL    |       |
+| Fund_Name   | varchar(15) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+create table Employee_Leave
+(
+E_Id int, L_From datetime,L_To datetime, Leave_Type varchar(20), No_Of_Days int, Comments varchar(50)
+);
+
+describe Employee_Leave;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| E_Id       | int(11)     | YES  |     | NULL    |       |
+| L_From     | datetime    | YES  |     | NULL    |       |
+| L_To       | datetime    | YES  |     | NULL    |       |
+| Leave_Type | varchar(20) | YES  |     | NULL    |       |
+| No_Of_Days | int(11)     | YES  |     | NULL    |       |
+| Comments   | varchar(50) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+
+create table Insurance_Detail
+(
+E_Id int,Ins_Ac_No varchar(20),Total_amount float,Inst_Per_Term float
+);
+
+describe Insurance_Detail;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| E_Id          | int(11)     | YES  |     | NULL    |       |
+| Ins_Ac_No     | varchar(20) | YES  |     | NULL    |       |
+| Total_amount  | float       | YES  |     | NULL    |       |
+| Inst_Per_Term | float       | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+create table Insurance_Paid
+(
+E_id int,Ins_Ac_No varchar(20),Paid_Amount float,Paid_Date datetime
+);
+
+describe Insurance_Paid;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| E_id        | int(11)     | YES  |     | NULL    |       |
+| Ins_Ac_No   | varchar(20) | YES  |     | NULL    |       |
+| Paid_Amount | float       | YES  |     | NULL    |       |
+| Paid_Date   | datetime    | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+create table Login
+(
+uname varchar(15),upass varchar(15)
+);
+
+describe login;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| uname | varchar(15) | YES  |     | NULL    |       |
+| upass | varchar(15) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+

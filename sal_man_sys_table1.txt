@@ -1,0 +1,44 @@
+create table employee
+(
+E_Id int Primary Key, E_F_Name varchar(15), E_L_Name varchar(15), E_DOB datetime, E_Gender varchar(6), E_Add varchar(15), E_City varchar(15), E_Phone varchar(10), E_Designation varchar(15), E_Department varchar(15), E_HOD varchar(15), E_B_Salary float, E_DOJ date, Comments varchar(50), E_Grade char, E_Ac_No varchar(25), E_Type varchar(10)
+);
+
+create table Salary_Master
+(
+Sr_no int Primary Key, E_Grade char, Bs float, Ta float, Da float, Hra float, Commision float, Ded float, Income_Tax float, Effective_Date_Time datetime, Pension float
+);
+
+create table Salary_Paid
+(
+E_Id int, Paid_Date_Time datetime, Amount_Paid float, Slip_no int
+);
+
+create table Fund_Master
+(
+E_Grade int, Fund_Name varchar(15), Fund_Amount float
+);
+
+create table Fund_Paid
+(
+E_Id int, Amount_Paid float, P_Date_Time datetime, Fund_Name varchar(15)
+);
+
+create table Employee_Leave
+(
+E_Id int, L_From datetime,L_To datetime, Leave_Type varchar(20), No_Of_Days int, Comments varchar(50)
+);
+
+create table Insurance_Detail
+(
+E_Id int,Ins_Ac_No varchar(20),Total_amount float,Inst_Per_Term float
+);
+
+create table Insurance_Paid
+(
+E_id int,Ins_Ac_No varchar(20),Paid_Amount float,Paid_Date datetime
+);
+
+create table Login
+(
+uname varchar(15),upass varchar(15)
+);
