@@ -1,4 +1,4 @@
-# Salary_Management_System1
+# Salary_Management_System
 DBMS Projects
 
 Hi Humans!
