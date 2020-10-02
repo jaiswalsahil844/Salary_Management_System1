@@ -1,4 +1,4 @@
 # Salary_Management_System
-DBMS Projects
+This project was based on DataBase Management System(DBMS)
 
 
